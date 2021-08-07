@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: space-between;
+  padding: 0.3rem 2rem;
+  font-size: 1.2rem;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+.brandIcon {
+  height: 1.2rem;
+}
+
+.navlinks {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+}
