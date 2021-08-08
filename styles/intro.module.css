@@ -1,0 +1,36 @@
+.container {
+  text-align: center;
+  background-color: #b91231fa;
+  padding: 2rem 1rem;
+}
+
+.container h1 span {
+  font-size: 3rem;
+}
+
+.intro {
+  font-size: 1.25rem;
+  color: white;
+  font-style: italic;
+}
+
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #b91231fa; */
+}
+
+.profilePicture {
+  border: 3px solid white;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  /* position: relative;
+  bottom: 2.75rem; */
+}
+
+.arrows {
+  height: 2rem;
+  margin: 0rem 1rem;
+}
