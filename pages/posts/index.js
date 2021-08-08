@@ -1,5 +1,12 @@
+import PostList from "../../components/home/posts/post-list";
+import { DUMMY_POSTS } from "../../dummy-data";
+
 const PostsPage = (props) => {
-  return <h1>Posts Page</h1>;
+  return (
+    <>
+      <PostList posts={DUMMY_POSTS} />
+    </>
+  );
 };
 
 export default PostsPage;
