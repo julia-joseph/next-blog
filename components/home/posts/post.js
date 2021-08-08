@@ -5,8 +5,14 @@ import classes from "../../../styles/post.module.css";
 const Post = (props) => {
   const { post } = props;
 
+  const cardClass = props.featured
+    ? classes.featured__posts__card
+    : classes.all__posts__card;
+
+  const containerClass = `card ${cardClass}`;
+
   return (
-    <div className={`card ${classes.card}`}>
+    <div className={containerClass}>
       <div className={classes.imageContainer}>
         <Image
           src={"/" + post.image}
