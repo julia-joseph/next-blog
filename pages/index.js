@@ -1,14 +1,12 @@
-import classes from "../styles/home.module.css";
+import Intro from "../components/home/intro";
+import FeaturedPosts from "../components/home/featured-posts";
 
 const HomePage = (props) => {
   return (
-    <div className={classes.profileContainer}>
-      <img
-        src="images/607866.png"
-        alt="profile picture"
-        className={classes.profilePicture}
-      ></img>
-    </div>
+    <>
+      <Intro />
+      <FeaturedPosts />
+    </>
   );
 };
 
