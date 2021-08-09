@@ -1,8 +1,21 @@
+import { useRef } from "react";
 import classes from "../../../styles/contact-form.module.css";
 
 const ContactForm = () => {
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const subjectRef = useRef();
+  const bodyRef = useRef();
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
+
+    const body = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      subject: subjectRef.current.value,
+      body: bodyRef.current.value,
+    };
   };
 
   return (
@@ -21,7 +34,8 @@ const ContactForm = () => {
               id="name"
               name="name"
               placeholder="Enter your name here"
-            ></input>
+              ref={nameRef}
+            />
           </div>
           <div className={classes.controller}>
             <label htmlFor="email">Email</label>
@@ -30,7 +44,8 @@ const ContactForm = () => {
               id="email"
               name="email"
               placeholder="Enter your email here"
-            ></input>
+              ref={emailRef}
+            />
           </div>
         </div>
         <div className={classes.controllers}>
@@ -41,7 +56,8 @@ const ContactForm = () => {
               id="subject"
               name="subject"
               placeholder="Enter the subject here"
-            ></input>
+              ref={subjectRef}
+            />
           </div>
         </div>
         <div className={classes.controllers}>
@@ -52,6 +68,7 @@ const ContactForm = () => {
               name="body"
               placeholder="Enter details here"
               rows="10"
+              ref={bodyRef}
             />
           </div>
         </div>
