@@ -1,0 +1,72 @@
+.container {
+  margin-top: 2rem;
+}
+
+.container h3,
+.container p {
+  text-align: center;
+}
+
+.form {
+  width: 50%;
+  margin: auto;
+}
+
+.controllers {
+  margin: 0.5rem;
+  width: 100%;
+  display: flex;
+}
+
+.controller {
+  width: 50%;
+  margin: 1rem;
+}
+
+.full__span__controller {
+  width: 100%;
+  margin: 1rem;
+}
+
+.controller label,
+.full__span__controller label {
+  margin-right: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.controller input,
+.full__span__controller input,
+.full__span__controller textarea {
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: 2px inset #898989;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.form button {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  background-color: black;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  margin: auto;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  cursor: pointer;
+}
+
+.form button:hover {
+  width: 25%;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  padding: 0.7rem;
+  border-radius: 7px;
+  letter-spacing: 0.3rem;
+}
