@@ -1,4 +1,21 @@
-const handler = (req, res) => {
+import {
+  getClient,
+  getCollection,
+  insertCollections,
+} from "../../../utils/db-util";
+
+const handler = async (req, res) => {
+  let client;
+
+  try {
+    client = await getClient();
+  } catch (error) {
+    res.status(500).json({
+      message: "Trouble connecting to MongoDB",
+    });
+    return;
+  }
+
   if (req.method === "POST") {
     const name = req.body.name;
     const email = req.body.email;
@@ -7,25 +24,48 @@ const handler = (req, res) => {
 
     const message = validateInput(name, email, subject, body);
 
+    const newContact = {
+      name,
+      email,
+      subject,
+      body,
+    };
+
     if (message) {
       res.status(422).json({
         message: message,
+        error: "Invalid input",
       });
     } else {
-      res.status(200).json({
-        message: "Email sent successfully!",
-      });
+      try {
+        const result = await insertCollections(client, "contact", newContact);
+
+        newContact._id = result.insertedId;
+
+        res.status(201).json({
+          message: "Email sent successfully!",
+          data: newContact,
+        });
+      } catch (error) {
+        res.status(500).json({
+          message: "Trouble inserting data to MongoDB",
+          error: error,
+        });
+      }
     }
   } else if (req.method === "GET") {
-    res.status(200).json({
-      contact: {
-        name: "JJ",
-        email: "J@J.com",
-        subject: "Jing aorund",
-        body: "J way",
-      },
-    });
+    try {
+      const data = await getCollection(client, "contact", { _id: -1 });
+      res.status(200).json(data);
+    } catch (error) {
+      res.status(500).json({
+        message: "Trouble fetching data from MongoDB",
+        error: error,
+      });
+    }
   }
+
+  client.close();
 };
 
 export default handler;
