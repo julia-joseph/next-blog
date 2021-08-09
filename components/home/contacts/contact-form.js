@@ -16,6 +16,16 @@ const ContactForm = () => {
       subject: subjectRef.current.value,
       body: bodyRef.current.value,
     };
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .then(console.log);
   };
 
   return (
