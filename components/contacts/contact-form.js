@@ -30,12 +30,12 @@ const ContactForm = () => {
 
   return (
     <div className={classes.container}>
-      <h3>Contact Me! </h3>
-      <p>
-        For any questions, clarifications or even for a quick hello, please fill
-        in the form below to get in touch!
-      </p>
       <form onSubmit={onSubmitHandler} className={classes.form}>
+        <h3>Contact Me! </h3>
+        <p>
+          For any questions, clarifications or even for a quick hello, please
+          fill in the form below to get in touch!
+        </p>
         <div className={classes.controllers}>
           <div className={classes.controller}>
             <label htmlFor="name">Name</label>

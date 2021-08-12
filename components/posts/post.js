@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import classes from "../../../styles/post.module.css";
+import classes from "../../styles/post.module.css";
 
 const Post = (props) => {
   const { post } = props;

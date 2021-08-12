@@ -1,4 +1,4 @@
-import classes from "../../../styles/post-list.module.css";
+import classes from "../../styles/post-list.module.css";
 import Post from "./post";
 
 const PostList = (props) => {
